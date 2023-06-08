@@ -18,6 +18,18 @@ const connect = async () => {
 //middleware
 app.use(express.json());
 
+//error handling middleware
+app.use((error, req, res, next) => {
+  const errorStatus = error.status || 500;
+  const errorMessage = error.message || "Something went wrong!";
+  return res.status(errorStatus).json({
+    success: false,
+    status: errorStatus,
+    message: errorMessage,
+    stack: error.stack,
+  });
+});
+
 app.listen(5800, () => {
   connect();
   console.log("App listening and here we go!");
