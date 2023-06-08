@@ -1,9 +1,12 @@
 import express from "express";
-import { createDish } from "../controllers/dish";
+import { createDish, getAllDish } from "../controllers/dish";
 
 const router = express.Router();
 
 //CREATE
 router.post("/dish", createDish);
+
+//GET ALL DISH
+router.get("/", getAllDish);
 
 export default router;
