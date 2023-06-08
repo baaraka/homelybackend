@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import dishRoute from "./routes/dishs.js";
 
 const app = express();
 dotenv.config();
@@ -17,6 +18,8 @@ const connect = async () => {
 
 //middleware
 app.use(express.json());
+
+app.use("/api/dish", dishRoute);
 
 //error handling middleware
 app.use((error, req, res, next) => {
