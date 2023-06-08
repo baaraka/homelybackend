@@ -10,3 +10,12 @@ export const createDish = async (req, res, next) => {
     next(error);
   }
 };
+
+export const getAllDish = async (req, res, next) => {
+  try {
+    const getDish = await Dish.find();
+    res.status(200).json(getDish);
+  } catch (error) {
+    next(error);
+  }
+};
