@@ -1,4 +1,4 @@
-import Dish from "../models/Dish";
+import Dish from "../models/Dish.js";
 
 export const createDish = async (req, res, next) => {
   try {

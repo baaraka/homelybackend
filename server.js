@@ -19,7 +19,7 @@ const connect = async () => {
 //middleware
 app.use(express.json());
 
-app.use("/api/dish", dishRoute);
+app.use("/api/dishs", dishRoute);
 
 //error handling middleware
 app.use((error, req, res, next) => {
