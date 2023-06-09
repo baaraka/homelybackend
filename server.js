@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import cors from "cors";
 import dishRoute from "./routes/dishs.js";
 
 const app = express();
@@ -17,6 +18,7 @@ const connect = async () => {
 };
 
 //middleware
+app.use(cors());
 app.use(express.json());
 
 app.use("/api/dishs", dishRoute);
